@@ -61,7 +61,31 @@ button{
 }
 
 /*// POP-UP ANIMATION STYLES //*/
+#pop-up {
+  top: -400px;
+  transform-origin: 10px 10px;
+  animation: drop 1.5s ease forwards, 
+            swing 2s 2s ease forwards;
+}
 
+@keyframes drop {
+  0% {opacity: 0;}
+  70% {
+    transform: translateY(700px);
+  }
+  100% {
+    transform: translateY(650px);
+    opacity: 1;
+  }
+}
+
+@keyframes swing {
+    /* has to put translateY(650px) so swing doesn't overwrite it with its new property rotate() */
+  0% { transform: translateY(650px) rotateZ(0deg);} 
+  40% { transform: translateY(650px) rotateZ(90deg);}
+  70% {transform: translateY(650px) rotateZ(70deg);}
+  100% {transform: translateY(650px) rotateZ(75deg);}
+}
 
 /*// BASKET BASE STYLES //*/
 

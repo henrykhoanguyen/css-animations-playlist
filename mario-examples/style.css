@@ -40,14 +40,87 @@ html, body{
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+.mario {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  animation: drive 6s both infinite linear,
+            jump 0.3s 2.2s ease;
+  /* animation-name: drive;
+  animation-duration: 6s; */
+  /* 
+  animation-fill-mode: forwards takes the last property "to" and apply to to the element outside of animation window 
+  
+  animation-fill-mode: both keeps property "from" and "to" outside of animation window 
 
+  e.g: animation-fill-mode: both; 
+  */
 
+  /* animation-delay: 2s; */
+  /* animation-iteration-count: infinite;
+  animation-timing-function: linear; */
+  /* cubic-bezier() - https://cubic-bezier.com/*/
+}
+
+.luigi {
+  position: absolute;
+  top: 100px;
+  left: 0;
+
+  /* long detail animation */
+  animation-name: drive;
+  animation-duration: 6.5s;
+  animation-fill-mode: both; 
+  animation-iteration-count: infinite;
+  /* animation-direction is the direction of where the object is going */
+  animation-direction: normal; 
+  animation-timing-function: linear;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  /* short hand animation */
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0px;
+  animation: wind 40s linear infinite reverse;
+
+}
 
 /*// KEYFRAMES //*/
+@keyframes drive {
+  from {transform: translateX(-200px);}
+  to { transform: translateX(1000px);}
+}
 
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
 
+@keyframes jump {
+  0%{
+    top: -40px;
+  }
 
+  50% {
+    top: -100px;
+  }
 
-
-
-
+  100%{
+    top: -40px;
+  }
+}

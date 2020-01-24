@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#ball {
+  animation: ball 1s 1s ease-out forwards infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#right-leg {
+  animation: leg 1s ease-out forwards infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#right-arm {
+  animation: moving-arm 2s ease infinite forwards alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes moving-arm {
+  to {
+    transform: translateY(-15%) rotateZ(10deg);
+  }
+}
+
+@keyframes ball {
+  from {
+    transform: translateY(-50%) translateX(0%) rotateZ(0deg);
+  }
+  to {
+    transform: translateY(-200%) translateX(-20%) rotateZ(360deg);
+  }
+}
+
+@keyframes leg {
+  from {
+    transform: translateX(0%) translateY(5%) rotateZ(0deg);
+  }
+  to {
+    transform: translateX(-10%) translateY(-15%) rotateZ(30deg);
+  }
+}
